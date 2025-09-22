@@ -25,7 +25,18 @@ This is the initial setup for the Attendance Management System project.
   - Courses: IDs start at **101** → displayed as `C101`, `C102`, …
 - Updated `Main.java` to create multiple instances of `Student` and `Course` using constructors and verify auto-ID generation.
 
+## Part 4 - Data Encapsulation & Attendance Recording
+
+### Updates
+- Made fields in `Student` and `Course` **private** and added **getters**.
+- Created `AttendanceRecord` class to store attendance for a student-course pair.
+- Added **validation** for attendance status: only "Present" or "Absent" allowed (case-insensitive). Invalid status is automatically set to "Invalid" with a warning.
+- Updated `Main.java` to:
+  - Create `AttendanceRecord` objects
+  - Test valid and invalid attendance statuses
+  - Display all attendance records
+
 ## How to Run
 ```bash
-javac src/com/school/Main.java
-java -cp src com.school.Main
+javac -d out src/com/school/*.java
+java -cp out com.school.Main

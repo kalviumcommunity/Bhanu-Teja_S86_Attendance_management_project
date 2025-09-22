@@ -5,12 +5,22 @@ public class Course {
     private int courseId;
     private String courseName;
 
+    // Constructor
     public Course(String courseName) {
         this.courseId = nextCourseIdCounter++;
         this.courseName = courseName;
     }
 
+    // Getters
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
     public void displayDetails() {
-        System.out.println("Course ID: C" + this.courseId + ", Name: " + this.courseName);
+        System.out.println("Course ID: C" + courseId + ", Name: " + courseName);
     }
 }
