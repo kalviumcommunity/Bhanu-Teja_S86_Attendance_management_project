@@ -1,23 +1,25 @@
 package com.school;
 
 public class Person {
-    private static int nextPersonId = 1;
-    private int personId;
-    private String name;
-    private int age;
+    private static int nextIdCounter = 1;
 
-    public Person(String name, int age) {
-        this.personId = nextPersonId++;
+    protected int id;
+    protected String name;
+
+    public Person(String name) {
+        this.id = nextIdCounter++;
         this.name = name;
-        this.age = age;
     }
 
-    // Getters
-    public int getPersonId() { return personId; }
-    public String getName() { return name; }
-    public int getAge() { return age; }
+    public int getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
 
     public void displayDetails() {
-        System.out.println("ID: P" + personId + ", Name: " + name + ", Age: " + age);
+        System.out.println("ID: " + this.id + ", Name: " + this.name);
     }
 }
