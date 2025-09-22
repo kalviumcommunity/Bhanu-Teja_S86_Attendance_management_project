@@ -1,18 +1,20 @@
 package com.school;
 
 public class Student extends Person {
-    private String course;
+    private String gradeLevel;
 
-    public Student(String name, int age, String course) {
-        super(name, age);
-        this.course = course;
+    public Student(String name, String gradeLevel) {
+        super(name); // call Person constructor
+        this.gradeLevel = gradeLevel;
     }
 
-    public String getCourse() { return course; }
+    public String getGradeLevel() {
+        return gradeLevel;
+    }
 
     @Override
     public void displayDetails() {
         super.displayDetails();
-        System.out.println("Role: Student, Course: " + course);
+        System.out.println("Role: Student, Grade Level: " + this.gradeLevel);
     }
 }
