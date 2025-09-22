@@ -36,6 +36,18 @@ This is the initial setup for the Attendance Management System project.
   - Test valid and invalid attendance statuses
   - Display all attendance records
 
+## Part 5 – Students, Teaching & Non-Teaching Staff Hierarchy
+
+### Updates
+- Implemented **inheritance hierarchy**:
+  - Base class: `Person` (common fields: `personId`, `name`, `age`)
+  - Derived classes: `Student`, `Teacher`, `Staff`
+- Added role-specific fields:
+  - Student: `course`
+  - Teacher: `subject`
+  - Staff: `department`
+- Updated `Main.java` to create objects of each type and display details.
+
 ## How to Run
 ```bash
 javac -d out src/com/school/*.java
