@@ -48,6 +48,14 @@ This is the initial setup for the Attendance Management System project.
   - Staff: `department`
 - Updated `Main.java` to create objects of each type and display details.
 
+## Part 6: Interface-Driven Persistence with Storage
+- Defined a `Storable` interface with a `toDataString()` method.
+- Modified `Student`, `Course`, and `AttendanceRecord` classes to implement the `Storable` interface and provide their specific `toDataString()` implementations (CSV format).
+- Created a `FileStorageService` class with a `saveData(List<? extends Storable> items, String filename)` method to write `Storable` objects to a text file.
+- Utilized `try-with-resources` for safe file handling (`PrintWriter`, `FileWriter`).
+- Demonstrated in `Main.java` how to save lists of students, courses, and attendance records to separate files (`students.txt`, `courses.txt`, `attendance_log.txt`).
+- Discussed the flexibility provided by interfaces for handling different types of storable objects uniformly.
+
 ## How to Run
 ```bash
 javac -d out src/com/school/*.java

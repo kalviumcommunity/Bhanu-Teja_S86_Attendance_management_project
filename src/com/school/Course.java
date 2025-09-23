@@ -1,26 +1,30 @@
 package com.school;
 
-public class Course {
-    private static int nextCourseIdCounter = 101; // static counter
+public class Course implements Storable {
+    private static int nextCourseIdCounter = 101;
+
     private int courseId;
     private String courseName;
 
-    // Constructor
     public Course(String courseName) {
         this.courseId = nextCourseIdCounter++;
         this.courseName = courseName;
     }
 
-    // Getters
-    public int getCourseId() {
-        return courseId;
+     public int getCourseId() {
+        return this.courseId;
     }
 
     public String getCourseName() {
-        return courseName;
+        return this.courseName;
     }
 
     public void displayDetails() {
-        System.out.println("Course ID: C" + courseId + ", Name: " + courseName);
+        System.out.println("Course ID: " + this.courseId + ", Name: " + this.courseName);
+    }
+
+     @Override
+    public String toDataString() {
+        return this.courseId + "," + this.courseName;
     }
 }

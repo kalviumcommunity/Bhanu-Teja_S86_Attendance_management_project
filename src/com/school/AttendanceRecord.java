@@ -1,11 +1,10 @@
 package com.school;
 
-public class AttendanceRecord {
+public class AttendanceRecord implements Storable {
     private int studentId;
     private int courseId;
     private String status;
 
-    // Constructor with validation
     public AttendanceRecord(int studentId, int courseId, String status) {
         this.studentId = studentId;
         this.courseId = courseId;
@@ -14,7 +13,7 @@ public class AttendanceRecord {
             this.status = status;
         } else {
             this.status = "Invalid";
-            System.out.println("Warning: Invalid attendance status for student " + studentId + " in course " + courseId);
+            System.out.println("Warning: Invalid attendance status provided for studentId " + studentId);
         }
     }
 
@@ -32,6 +31,11 @@ public class AttendanceRecord {
     }
 
     public void displayRecord() {
-        System.out.println("Student ID: S" + studentId + ", Course ID: C" + courseId + ", Status: " + status);
+        System.out.println("Student ID: " + studentId + ", Course ID: " + courseId + ", Status: " + status);
+    }
+
+     @Override
+    public String toDataString() {
+        return studentId + "," + courseId + "," + status;
     }
 }
